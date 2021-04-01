@@ -830,36 +830,47 @@ Connection ~ 1300 5700
 Wire Wire Line
 	2000 5700 1800 5700
 Connection ~ 1800 5700
+Wire Wire Line
+	7200 3300 7200 3400
 $Comp
 L Device:R R?
 U 1 1 60657DD2
-P 2750 5400
-F 0 "R?" V 2650 5350 50  0000 L CNN
-F 1 "10K" V 2850 5350 50  0000 L CNN
-F 2 "" V 2680 5400 50  0001 C CNN
-F 3 "~" H 2750 5400 50  0001 C CNN
-	1    2750 5400
+P 7200 3700
+F 0 "R?" V 7100 3650 50  0000 L CNN
+F 1 "10K" V 7300 3650 50  0000 L CNN
+F 2 "" V 7130 3700 50  0001 C CNN
+F 3 "~" H 7200 3700 50  0001 C CNN
+	1    7200 3700
 	-1   0    0    1   
 $EndComp
 $Comp
 L Device:R R?
 U 1 1 60658B3E
-P 3050 5400
-F 0 "R?" V 2950 5350 50  0000 L CNN
-F 1 "10K" V 3150 5350 50  0000 L CNN
-F 2 "" V 2980 5400 50  0001 C CNN
-F 3 "~" H 3050 5400 50  0001 C CNN
-	1    3050 5400
+P 7500 3700
+F 0 "R?" V 7400 3650 50  0000 L CNN
+F 1 "10K" V 7600 3650 50  0000 L CNN
+F 2 "" V 7430 3700 50  0001 C CNN
+F 3 "~" H 7500 3700 50  0001 C CNN
+	1    7500 3700
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	3050 5250 3050 5100
+	7500 3550 7500 3400
 Wire Wire Line
-	2750 5100 2750 5250
-Text Label 2750 5000 0    30   ~ 0
+	7500 3400 7200 3400
+Connection ~ 7200 3400
+Wire Wire Line
+	7200 3400 7200 3550
+Text Label 7200 3300 0    30   ~ 0
 5V
 Wire Wire Line
-	3050 5550 3050 5700
+	7200 3850 7200 4000
+Wire Wire Line
+	7500 3850 7500 4000
+Text Label 7200 4000 2    30   ~ 0
+P21_RB0_SDA
+Text Label 7500 4000 0    30   ~ 0
+P22_RB1_SCL
 Text Label 2250 7050 3    30   ~ 0
 RTC_SCL
 Text Label 2350 7050 3    30   ~ 0
@@ -872,12 +883,14 @@ Text Label 3550 7050 3    30   ~ 0
 UTTL_RX
 Text Label 3650 7050 3    30   ~ 0
 UTTL_TX
+Text Label 3950 7050 3    30   ~ 0
+UTTL_DTR
 $Comp
 L Switch:SW_MEC_5G SW?
 U 1 1 6067A75A
 P 900 3150
 F 0 "SW?" V 854 3298 50  0000 L CNN
-F 1 "BOOT" V 945 3298 50  0000 L CNN
+F 1 "RST" V 945 3298 50  0000 L CNN
 F 2 "" H 900 3350 50  0001 C CNN
 F 3 "http://www.apem.com/int/index.php?controller=attachment&id_attachment=488" H 900 3350 50  0001 C CNN
 	1    900  3150
@@ -953,102 +966,4 @@ Wire Wire Line
 Connection ~ 900  2000
 Wire Wire Line
 	900  2000 900  2050
-Wire Wire Line
-	2550 5550 2750 5550
-Text Label 2550 5550 2    30   ~ 0
-RTC_SCL
-Text Label 2550 5700 2    30   ~ 0
-RTC_SDA
-Connection ~ 2750 5550
-Connection ~ 3050 5700
-Wire Wire Line
-	3050 5700 3250 5700
-Wire Wire Line
-	2550 5700 3050 5700
-Wire Wire Line
-	3050 5100 2750 5100
-Wire Wire Line
-	2750 5000 2750 5100
-Connection ~ 2750 5100
-Text Label 3250 5550 0    30   ~ 0
-P22_RB1_SCL
-Text Label 3250 5700 0    30   ~ 0
-P21_RB0_SDA
-Wire Wire Line
-	2750 5550 3050 5550
-Wire Wire Line
-	3950 5000 4450 5000
-Wire Wire Line
-	3950 5150 4450 5150
-Wire Wire Line
-	3950 5300 4450 5300
-Text Label 3950 5000 2    30   ~ 0
-PK3_MCLR
-Text Label 3950 5150 2    30   ~ 0
-PK3_PDG
-Text Label 3950 5300 2    30   ~ 0
-PK3_PGC
-Text Label 4450 5000 0    30   ~ 0
-P1_MCLR
-Text Label 4450 5300 0    30   ~ 0
-P27_PGC
-Text Label 4450 5150 0    30   ~ 0
-P28_PGD
-Wire Wire Line
-	3950 5750 4450 5750
-Wire Wire Line
-	3950 5900 4450 5900
-Text Label 3950 5750 2    30   ~ 0
-UTTL_TX
-Text Label 3950 5900 2    30   ~ 0
-UTTL_RX
-Text Label 4450 5750 0    30   ~ 0
-E21_RX
-Text Label 4450 5900 0    30   ~ 0
-E22_TX
-Connection ~ 3050 5550
-Wire Wire Line
-	3050 5550 3250 5550
-Wire Notes Line
-	3700 6000 4750 6000
-Wire Notes Line
-	3700 5400 4750 5400
-Wire Notes Line
-	650  6050 2300 6050
-Wire Notes Line
-	2300 6050 2300 4800
-Wire Notes Line
-	2300 4800 650  4800
-Wire Notes Line
-	650  4800 650  6050
-Text Notes 700  4900 0    55   ~ 0
-UART PIC ESP HC05
-Wire Notes Line
-	2350 4800 3600 4800
-Wire Notes Line
-	3600 4800 3600 5800
-Wire Notes Line
-	3600 5850 3600 6050
-Wire Notes Line
-	3600 6050 2350 6050
-Wire Notes Line
-	2350 4800 2350 6050
-Text Notes 2450 4900 0    55   ~ 0
-I2C PIC RTC
-Wire Notes Line
-	3700 4800 4750 4800
-Wire Notes Line
-	4750 4800 4750 5400
-Text Notes 3900 4900 0    55   ~ 0
-PIC PICKIT3
-Wire Notes Line
-	3700 4800 3700 5400
-Wire Notes Line
-	3700 5550 4750 5550
-Wire Notes Line
-	3700 5550 3700 6000
-Wire Notes Line
-	4750 5550 4750 6000
-Text Notes 3900 5650 0    55   ~ 0
-ESP USB TO TTL
 $EndSCHEMATC
